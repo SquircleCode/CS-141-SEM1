@@ -11,7 +11,21 @@ using namespace std;
 // Main Method
 int main(){
 	// To-Do
-	cout << "test";
+	// declare variables
+	int a;	
+	string s;
+	// user i/p
+	cout <<"Enter a number :";
+	cin >> a;
+	// test condition, divisibility by 2
+	// result within	
+	if (a%2==0){
+		s= "even";
+	}
+	else{
+		s="odd";
+	}	
+	cout << "the number is " << s << endl;
 	return 0;
 }
 
