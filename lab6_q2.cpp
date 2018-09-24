@@ -30,6 +30,9 @@ int main(){
 	// To-Do
 	// Variables - two numbers and their sum
 	int a,b,sum1; 
+	// user input
+	cout <<"Enter two Numbers : ";
+	cin >> a>>b;
 	// Call sum function by reference and by value
 	sum(a,b,sum1);
 	// output

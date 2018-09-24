@@ -42,7 +42,7 @@ int sum(int a, int b){
 int main(){
 	// To-Do
 	//variables
-	int a,b,reslut, input;
+	int a,b,result, input;
 	string choice ="";	
 	//user input
 	cout<<"Enter two numbers : ";
@@ -56,11 +56,11 @@ int main(){
 	}
 	else if (input == 2){
 		result=min(a,b);
-		choice="minimum"
+		choice="minimum";
 	}
 	else if (input == 3){
 		result=sum(a,b);
-		choice="sum"
+		choice="sum";
 	}
 	else{
 		cout <<"enter 1, 2, 3 only";	
@@ -68,7 +68,7 @@ int main(){
 	}
 
 	//output
-	cout<<"The "<<choice<<"of the two numbers is "<<resutl
+	cout<<"The "<<choice<<" of the two numbers is "<<result <<endl;
 	return 0;
 }
 
