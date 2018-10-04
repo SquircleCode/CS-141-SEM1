@@ -1,5 +1,13 @@
-//import libraries
+/*
+* Auto-Generated File
+* Created Using cpp_file_manager
+*/
+
+// Importing Libraries
 #include <iostream>
+
+using namespace std;
+
 /*
  * Question 2 (Functions): You are ab salesperson of Bata shoe company, where each shoe is Rs 225. Company gave you three options for the salary.
 1. Just a salary of Rs 600 per week;
@@ -15,23 +23,43 @@ Write a driver program to use the 4 functions and decide the best option for you
 // input function
 	//question out
 	//answer in
-	//return value - weekly sales - number of shoes sold per week
+	//return value - weekly sales ( number of shoes sold per week )
 
 // fixed salary
 	//just stays 600 no matter what
 
 // salary + commission
+	//input - sales
 	// salary (sal) = 7 rs/hr
 	// working hrs (wh) = 40
 	// tot_sal = sal x wh
 	// comm = 10%
-	// sales = 225 * weekly sales
 	// tot_comm = comm * sales
-	// money earned = tot_sal + tot_comm
-
+	// money_earned = tot_sal + tot_comm
+	//output - money_earned
+ 
 // no salary, only commission
-	//sales = 225 * weekly sales
-	//tot_comm = 0.2 * sales
-	//
+	// input - weekly_sales, sales
+	//tot_ValComm = 0.2 * sales
+	//tot_NumComm = 20 * weekly_sales
+	//money_earned = tot_comm + tot_NumComm
+	// output - money_earned
+
+// largest number finder
+	// input - 3 numbers
+	// find largest one
+	// output - largest numberof the 3
 
 // main function
+int main(){
+	// To-Do
+	// Variables
+	// weekly_sales, sales
+	// fixedSal, varSal, noSal
+	// store the function values in the variables
+	// compare the values, find largest
+	// output - the largest one and the best case
+	return 0;
+}
+
+
