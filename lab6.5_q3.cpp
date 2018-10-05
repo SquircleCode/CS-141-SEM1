@@ -13,7 +13,7 @@ using namespace std;
 // sums upto n integers
 long sumUptoN(int n){
 	long sum = 0;
-	for (int i = 1 ;i<=n;<i++){
+	for (int i = 1 ;i<=n;i++){
 		sum +=i;
 	}
 	return sum;
