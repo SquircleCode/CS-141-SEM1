@@ -35,12 +35,16 @@ int main(){
 	// To-Do
 	bool b = false;
 	long result;
-	for (int i =1; !b;i++ ){
+	for (int i =1; b==false;i++ ){
 		result = sumUptoN(i);
 		b = perfectSquareCheck(result);
 		if(b){
 			cout<< "The next number is = " << result;
 		}
+		
+		
+		
+		
 	}
 	return 0;
 }
