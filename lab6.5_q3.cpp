@@ -38,15 +38,17 @@ int main(){
 	for (int i =1; b==false;i++ ){
 		result = sumUptoN(i);
 		b = perfectSquareCheck(result);
+        int l = 0;
 		if(b){
-			cout<< "The next number is = " << result;
+			cout<< "The number is = " << result;
+            l++;
+            if (l<=4)
+            b=false;
 		}
 		
-		
-		
-		
 	}
-	return 0;
+	return 0;;
+}
 }
 
 
