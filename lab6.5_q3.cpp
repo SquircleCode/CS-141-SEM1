@@ -10,45 +10,33 @@ Question 3 (Loops and Logic): The integer 36 has a peculiar property: it is a pe
 
 using namespace std;
 
-// sums upto n integers
-long sumUptoN(int n){
-	long sum = 0;
-	for (int i = 1 ;i<=n;i++){
-		sum +=i;
-	}
-	return sum;
-}
-// checks if a number x is a perfect square
-bool perfectSquareCheck(long x){
-	// finds the square root of x
-	double sqroot = pow(x,0.5);
-	// see's if the integral part of the number is equal to the actual number 
-	if (sqroot - (long)sqroot ==0 ){
-		return true;	
-	}
-	else
-		return false;			
-}
-
 // Main Function
 int main(){
 	// To-Do
 	bool b = false;
-	long result;
-	for (int i =1; b==false;i++ ){
-		result = sumUptoN(i);
-		b = perfectSquareCheck(result);
-        int l = 0;
-		if(b){
-			cout<< "The number is = " << result;
-            l++;
-            if (l<=4)
-            b=false;
+	int l = 0;
+	int k;	
+	cout << "Enter number of terms : " ;
+	cin >> k;
+	for (int n=1;!b;n++ ){
+		// sums upto n integers		
+		long sum = 0;
+		for (int i = 1 ;i<=n;i++){
+			sum +=i;
 		}
-		
+		// finds the square root of x
+		double sqroot = pow(sum,0.5);
+		// see's if the integral part of the number is equal to the actual number 
+		if (sqroot - (long)sqroot ==0 ){
+			cout<< "The number is = " << sum << endl;
+			l++;	
+		}
+		// exits when l becomes 4, ie 4 numbers are found. 
+		if(l>=k)
+			b=true;
+
 	}
-	return 0;;
-}
+	return 0;
 }
 
 
