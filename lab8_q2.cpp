@@ -13,7 +13,7 @@ using namespace std;
 int *arraySorter (int arrayRandom [],int n){
 	for(int j = 1; j<n;j++){
 		for (int i =0; i<n;i++){
-			if (arrayRandom [i] > arrayRandom [i+1] ){
+			if (arrayRandom [i] >= arrayRandom [i+1] ){
 					int temp = 	arrayRandom [i];
 					arrayRandom [i] = arrayRandom [i+1] ;
 					arrayRandom [i+1] = temp;			
@@ -36,6 +36,25 @@ int arrayMin(int arrayRand[],int n){
 }
 	
 // mode func
+int arrayMode(int arrayRand[],int n){
+	int *arraySorted = arraySorter(arrayRand,n);
+	int max;
+	int freqPrev=1;
+	int freqNext=1;
+	for(int i =0 ; i<n;i++){
+		if (*(arraySorted+i)==*(arraySorted+i+1)){
+			freqNext++;
+		}
+		else{
+			if(freqNext>freqPrev){
+				max=*(arraySorted+i-1);
+				freqPrev=freqNext;
+				freqNext=1;
+			}
+		}
+	}
+	return max;
+}
 
 
 // median func
@@ -48,13 +67,20 @@ int arrayMedian(int arrayRand[],int n){
 }
 
 //mean
-int arrayMean (int num[], int n){
+int arrayMean (int arrayRand[], int n){
 	//calculate the sum	
 	int sum = 0;
 	for (int i = 0;i<n;i++){
-		sum +=num[i];	
+		sum +=arrayRand[i];	
 	}
 	return sum/n;
+}
+
+void arrayDisp(int *arrayRand, int n){
+	for(int i =0;i<n;i++){
+		cout << *(arrayRand+i)<<"\t";	
+	}
+	cout<<"\n";
 }
 
 // Main Function
@@ -63,9 +89,10 @@ int main(){
 	// variables for output
 	int n,max,min,median,mode,mean;
 	// array declaration
-	int arrayRandom [] ={12,432,1,23,43,123};
+	int arrayRandom [] ={12,432,1,23,43,43,123};
 	// number of elemets
-	 n = sizeof(arrayRandom)/sizeof(0);	
+	n = sizeof(arrayRandom)/sizeof(0);	
+	arrayDisp(arrayRandom,n);
 	
 	// max
 		max = arrayMax(arrayRandom,n);
@@ -77,9 +104,10 @@ int main(){
 	// median 
 		median = arrayMedian(arrayRandom,n);
 	// mode
-
+		mode = arrayMode(arrayRandom,n);
 	// output 
-	cout << "\nMean\t=\t"<<mean<< "\nMedian\t=\t"<<median<<"\nMaximum\t=\t"<<max<<"\nMinimum\t=\t"<<min<<endl;
+	
+	arrayDisp(arraySorter(arrayRandom,n),n);
+	cout << "\nMean\t=\t"<<mean<< "\nMedian\t=\t"<<median<<"\nMaximum\t=\t"<<max<<"\nMinimum\t=\t"<<min<<"\nMode\t=\t"<<mode<<endl;
 	return 0;
 }
-
