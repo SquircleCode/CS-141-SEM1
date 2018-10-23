@@ -11,9 +11,9 @@ using namespace std;
 // sorting function - important- rest follows easily
 // bubble sort
 int *arraySorter (int arrayRandom [],int n){
-	for(int j = 1; j<n;j++){
-		for (int i =0; i<n;i++){
-			if (arrayRandom [i] >= arrayRandom [i+1] ){
+	for(int j = n-1; j>0;j--){ // number of time row wise swapping happens
+		for (int i =0;i<j;i++){ // swaps elements
+			if (arrayRandom [i] >arrayRandom [i+1] ){
 					int temp = 	arrayRandom [i];
 					arrayRandom [i] = arrayRandom [i+1] ;
 					arrayRandom [i+1] = temp;			
@@ -26,13 +26,12 @@ int *arraySorter (int arrayRandom [],int n){
 
 // max func
 int arrayMax(int arrayRand[],int n){
-	int *arraySorted = arraySorter(arrayRand,n);
-	return *(arraySorted+n-1);
+
+	return *(arraySorter(arrayRand,n)+n-1);
 }
 // min func
 int arrayMin(int arrayRand[],int n){
-	int *arraySorted = arraySorter(arrayRand,n);
-	return *(arraySorted);
+	return *(arraySorter(arrayRand,n));
 }
 	
 // mode func
@@ -89,9 +88,10 @@ int main(){
 	// variables for output
 	int n,max,min,median,mode,mean;
 	// array declaration
-	int arrayRandom [] ={12,432,1,23,43,43,123};
+	int arrayRandom [] ={12,432,1,23,43,43,123,45,56,56,1,2};
 	// number of elemets
-	n = sizeof(arrayRandom)/sizeof(0);	
+	n = sizeof(arrayRandom)/sizeof(0);
+	cout<<"\nRandom Array\n";	
 	arrayDisp(arrayRandom,n);
 	
 	// max
@@ -106,7 +106,7 @@ int main(){
 	// mode
 		mode = arrayMode(arrayRandom,n);
 	// output 
-	
+	cout<<"\nSorted Array\n";	
 	arrayDisp(arraySorter(arrayRandom,n),n);
 	cout << "\nMean\t=\t"<<mean<< "\nMedian\t=\t"<<median<<"\nMaximum\t=\t"<<max<<"\nMinimum\t=\t"<<min<<"\nMode\t=\t"<<mode<<endl;
 	return 0;
