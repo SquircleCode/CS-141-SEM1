@@ -16,15 +16,25 @@ int arraySum (int num[], int n){
 	}
 	return sum;
 } 
-
+void arrayDisp(int *arrayRand, int n){
+	for(int i =0;i<n;i++){
+		cout << *(arrayRand+i)<<"\t";	
+	}
+	cout<<"\n";
+}
 
 
 // Main Function
 int main(){
 	// To-Do
 	// array declaration
-	int numbers [] ={1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}; 	
+	int numbers [] ={1,2,3,4,5,6,7,8,9,10}; 
+	// calculates number of elements
+	int n = sizeof(numbers)/sizeof(0);
+	// displays the array;
+	cout << "\nThe Array\n";
+	arrayDisp(numbers,n);	
 	// output
-	cout << arraySum(numbers,sizeof(numbers)/sizeof(0))<<endl;
+	cout <<"Sum of elements = "<< arraySum(numbers,n)<<endl;
 	return 0;
 }
