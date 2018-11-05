@@ -1,0 +1,11 @@
+1.
+	*p3 = S
+	*p3 = T, p3 = 6940
+	*p1 = S, p1 = 6940
+2.
+	D. *p = 75;
+3.
+	double pointer is pointing to a char
+4. 
+			
+
