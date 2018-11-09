@@ -7,5 +7,35 @@
 3.
 	double pointer is pointing to a char
 4. 
-			
+	int main()
+	{
+	   char blocks[3] = {'A','B','C'}; // 4434
+	   char *ptr = &blocks[0]; // 4434	
+	   char temp; // random value
 
+	   temp = blocks[0]; // A
+	   temp = *(blocks + 2); // C
+	   temp = *(ptr + 1); // B
+	   temp = *ptr; // A
+
+	   ptr = blocks + 1; // 4435
+	   temp = *ptr; // B
+	   temp = *(ptr + 1); // C
+
+	   ptr = blocks; //4434
+	   temp = *++ptr; // B
+	   temp = ++*ptr; // C
+	   temp = *ptr++; // B
+	   temp = *ptr; // C
+
+	   return 0;
+	}
+	
+	4434,4434,random value, A,C,B,A,4435,B,C,4434,B,C,B,C
+5.
+	char s[10] = "abcde";
+	char* cptr;
+	for(int i = ){
+	}
+	// WRITE YOUR CODE HERE
+			
