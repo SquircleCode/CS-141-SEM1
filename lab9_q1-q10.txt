@@ -35,8 +35,66 @@
 5.
 	char s[10] = "abcde";
 	char* cptr
-	for(i =0;*(s+i)!='\0';i
-	{
+	// length of char array
+	int n;
+	for(n =0;*(s+n)!='\0';i++);
+	// reversing loop
+	for(int i =0;i<n;i++){
+		*(cptr+i)=*(s+n-i);
+	}
+6.	
+	int countEven(int* num, int n){
+		int ne=0;
+		for(int i =0;i<n;i++){
+			if(*(num+i)/2==0)
+				ne++;	
+		}
+		return ne;
+	}
+7. 
+	  double* maximum(double* a, int size){
+	  	if(size==0)
+			return NULL;
+		double* max=a;
+		for(int i=0; i<size;i++){
+			if(*max<*(a+i)){
+				max = a+i;
+			}
+		}
+		return max;
+		
+	  }
+8.
+	int myStrLen(char* str){
+		int i =0;
+		// counts char b4 null char	
+		while(*(str+i)!='\0'){
+			i++;	
+		}
+		return i;
+	}
+9.
+	bool contains(char *str, char c){
+		// length of char array
+		int n;
+		for(n =0;*(s+n)!='\0';i++);
+		for(int i =0;i<n;i++){
+			if(*(str+i)==c)
+				return true;
+		}
+		return false;
+		
+	}
+10.
+	void revtString(char* ptr){
+		int n;
+		for(n =0;*(s+n)!='\0';i++);
+		for(int i =0; i<n;i++){
+			int temp = *(ptr+i)
+			*(ptr+i)=(ptr+n-i);
+			*(ptr+n-i)=temp;
+		}
+	  
 	}
 	
-			
+				
