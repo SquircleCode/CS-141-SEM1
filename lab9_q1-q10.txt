@@ -34,8 +34,9 @@
 	4434,4434,random value, A,C,B,A,4435,B,C,4434,B,C,B,C
 5.
 	char s[10] = "abcde";
-	char* cptr;
-	for(int i = ){
+	char* cptr
+	for(i =0;*(s+i)!='\0';i
+	{
 	}
-	// WRITE YOUR CODE HERE
+	
 			
