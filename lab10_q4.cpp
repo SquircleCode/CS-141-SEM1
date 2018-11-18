@@ -175,12 +175,23 @@ int main(){
 	p1.Print();
 	p2.Print();
 	//Lab 10 Exercises 4.2, 4.3. Testing of the class Rectangle goes here:  
-	Rectangle r1(p1,p2);
+	//user input
+	cout<<"Enter bottom right point, x y\n";
+	cin>>x1>>y1;
+	cout<<"Enter top left point, x y\n";
+	cin>>x2>>y2;
+	//create point objects
+	Point p3(x1,y1);
+	Point p4(x2,y2);
+	//create rectangle objects
+	Rectangle r1(p3,p4);
 	Rectangle r2;
+	//print coordinates
 	cout <<"Rectangle1\n";	
 	r1.Print();
-	cout <<"Rectangle2\n";
+	cout <<"Rectangle2(default)\n";
 	r2.Print();
+	//display area
 	cout <<"Area of Rectangle1 = "<<r1.area()<<endl;
 	cout <<"Area of Rectangle2 = "<<r2.area()<<endl;
 	return 0;
