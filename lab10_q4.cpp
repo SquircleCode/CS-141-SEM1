@@ -1,4 +1,5 @@
-#include <iostream.h>
+
+#include <iostream>
 using namespace std;
 
 // ********************************************************************
@@ -82,7 +83,7 @@ void Point::Set_Y(int yval){
 
 //Lab 10 exercise 4.1. Add definition of member function print:
 void Point::Print(){
-	cout<<"("X<<", "<<Y<<")\n";
+	cout<<"("<<X<<", "<<Y<<")\n";
 }
 
 
@@ -91,20 +92,66 @@ void Point::Print(){
 // ********************************************************************
 
 //Lab 10 exercise 4.2, 4.3: Add class Rectangle declaration HERE: 
+class Rectangle{
+	private:
+	Point bl,br,tl,tr;
+	int side1();
+	int side2();
+	public:	
+	Rectangle();
+	Rectangle(Point,Point);
+	void Print();
+	int area();
+};
 
 // ********************************************************************
 //  Methods for class Rectangle
 // ********************************************************************
 
 //Lab 10 exercise 4.2, 4.3. Add class Rectangle methods HERE: 
+Rectangle::Rectangle(Point bl, Point tr){
+	this->bl=bl;
+	this->tr=tr;
+	tl.Set_X(bl.Get_X());
+	tl.Set_Y(tr.Get_Y());
+	br.Set_X(tr.Get_X());
+	br.Set_Y(bl.Get_Y());
+}
 
+Rectangle::Rectangle(){
+	bl.Set_X(0);bl.Set_Y(0);
+	br.Set_X(1);br.Set_Y(0);			
+	tr.Set_X(1);tr.Set_Y(1);
+	tl.Set_X(0);tl.Set_Y(1);
+}
+void Rectangle::Print(){
+	cout<<"Bottom left = ";
+	bl.Print();
+	cout<<"Bottom Right = ";
+	br.Print();
+	cout<<"Top Right = ";
+	tr.Print();
+	cout<<"Top Left = ";
+	tl.Print();
+	cout<<endl;
 
+}
+int Rectangle :: side1(){
+	return br.Get_X()-bl.Get_X();
+}
+int Rectangle :: side2(){
+	return tl.Get_Y()-bl.Get_Y();
+}
+
+int Rectangle :: area(){
+	int s1 = this->side1();
+	int s2 = this->side2();
+	return s1*s2;
+}
 
 // ********************************************************************
 //  main() function for testing classes Point and Rectangle
 // ********************************************************************
-
-
 
 // Testing classes Point and Rectangle
 int main(){
@@ -125,11 +172,20 @@ int main(){
 	cout<< "The y value for p2 is " << p2.Get_Y() << endl;
 
 	//Lab 10 exercise 4.1. Test member function print on points p1, p2:
-
+	p1.Print();
+	p2.Print();
 	//Lab 10 Exercises 4.2, 4.3. Testing of the class Rectangle goes here:  
-
+	Rectangle r1(p1,p2);
+	Rectangle r2;
+	cout <<"Rectangle1\n";	
+	r1.Print();
+	cout <<"Rectangle2\n";
+	r2.Print();
+	cout <<"Area of Rectangle1 = "<<r1.area()<<endl;
+	cout <<"Area of Rectangle2 = "<<r2.area()<<endl;
 	return 0;
 }
 
 //---------------------- point.cpp ------------------------------------//
+
 
