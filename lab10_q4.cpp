@@ -144,8 +144,8 @@ int Rectangle :: side2(){
 }
 
 int Rectangle :: area(){
-	int s1 = this->side1();
-	int s2 = this->side2();
+	int s1 = side1();
+	int s2 = side2();
 	return s1*s2;
 }
 
