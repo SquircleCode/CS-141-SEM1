@@ -155,6 +155,7 @@ int Rectangle :: area(){
 
 // Testing classes Point and Rectangle
 int main(){
+	int x1,x2,y1,y2;
 	// Declaring a point using default class constructor (x = y = 0):
 	Point p1;
 	cout<< "The x value for p1 is " << p1.Get_X() << endl;
